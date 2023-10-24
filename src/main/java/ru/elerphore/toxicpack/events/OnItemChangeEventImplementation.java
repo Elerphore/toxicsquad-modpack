@@ -1,23 +1,39 @@
 package ru.elerphore.toxicpack.events;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
+
+import java.util.function.Consumer;
 
 import static ru.elerphore.toxicpack.ToxicMod.factoryReceiver;
 
 public class OnItemChangeEventImplementation {
     public static void implementation(LivingEquipmentChangeEvent event) {
+
         if (event.getEntity() instanceof Player player) {
-            if (10 >= Math.random() * 100) {
+            if (Math.random() < 0.05) {
                 factoryReceiver.getZombieFactory().mobSpawn(player, 7);
-            } else if (10 >= Math.random() * 100) {
+                return;
+            }
+
+            if (Math.random() < 0.05) {
                 var explosion = factoryReceiver.getExplosionFactory().spawn(player);
                 explosion.explode();
                 explosion.finalizeExplosion(true);
-            } else {
-                player.sendSystemMessage(Component.literal("Тебе повезло. Клоун."));
+                return;
             }
+
+            if(Math.random() < 0.05) {
+                var localPlayer = Minecraft.getInstance().player;
+                assert localPlayer != null;
+                localPlayer.setPos(localPlayer.position().x, localPlayer.position().y + 50, localPlayer.position().z);
+                return;
+            }
+
+            player.sendSystemMessage(Component.literal("Тебе повезло. Клоун."));
         }
     }
+
 }

@@ -1,8 +1,7 @@
 package ru.elerphore.toxicpack;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
