@@ -1,4 +1,4 @@
-package ru.elerphore.toxicpack.factory;
+package ru.elerphore.toxicpack.factory.mob;
 
 import net.minecraft.world.entity.player.Player;
 
