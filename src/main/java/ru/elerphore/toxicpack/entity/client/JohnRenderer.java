@@ -11,7 +11,7 @@ import static ru.elerphore.toxicpack.ToxicMod.MODID;
 
 public class JohnRenderer extends MobRenderer<JohnModel, JohnEntity<JohnModel>> {
     public JohnRenderer(EntityRendererProvider.Context p_174304_) {
-        super(p_174304_, new JohnEntity(p_174304_.bakeLayer(ModModelLayers.JOHN_LAYER)), 0.5f);
+        super(p_174304_, new JohnEntity(p_174304_.bakeLayer(ModModelLayers.JOHN_LAYER)), 0.2f);
     }
 
     @Override

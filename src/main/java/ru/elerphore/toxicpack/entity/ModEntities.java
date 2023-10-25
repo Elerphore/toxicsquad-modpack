@@ -12,7 +12,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<JohnModel>> JOHN =
             ENTITY_TYPES.register("john", () -> EntityType.Builder.of(JohnModel::new, MobCategory.MONSTER)
-                    .sized(1.5f, 1.5f).build("john"));
+                    .sized(.5f, .5f).build("john"));
 
 
     public static void register(IEventBus eventBus) {

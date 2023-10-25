@@ -1,6 +1,5 @@
 package ru.elerphore.toxicpack.entity.client;
 
-import com.ibm.icu.text.Normalizer;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 

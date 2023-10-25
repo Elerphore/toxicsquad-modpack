@@ -6,17 +6,23 @@ package ru.elerphore.toxicpack.entity.client;// Made with Blockbench 4.8.3
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
+import ru.elerphore.toxicpack.entity.animations.ModAnimationDefinitions;
+import ru.elerphore.toxicpack.entity.custom.JohnModel;
 
-public class JohnEntity<T extends Entity> extends EntityModel<T> {
+public class JohnEntity<T extends Entity> extends HierarchicalModel<T> {
+	private final ModelPart root;
 	private final ModelPart head;
 	private final ModelPart bone;
 	private final ModelPart arms;
 
 	public JohnEntity(ModelPart root) {
+		this.root = root;
 		this.head = root.getChild("head");
 		this.bone = root.getChild("bone");
 		this.arms = root.getChild("arms");
@@ -56,7 +62,20 @@ public class JohnEntity<T extends Entity> extends EntityModel<T> {
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		this.root().getAllParts().forEach(ModelPart::resetPose);
+		this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
 
+		this.animateWalk(ModAnimationDefinitions.JOHN_WALK2, limbSwing, limbSwingAmount, 2f, 2.5f);
+		this.animate(((JohnModel) entity).idleAnimationState, ModAnimationDefinitions.JOHN_ATTACK, ageInTicks, 1f);
+	}
+
+	private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {
+		pNetHeadYaw = Mth.clamp(pNetHeadYaw, -30.0F, 30.0F);
+//		pHeadPitch = Mth.clamp(pHeadPitch, -25.0F, 45.0F);
+		pHeadPitch = Mth.clamp(pHeadPitch, -15.0F, 15.0F);
+
+		this.head.yRot = pNetHeadYaw * ((float)Math.PI / 180F);
+		this.head.xRot = pHeadPitch * ((float)Math.PI / 180F);
 	}
 
 	@Override
@@ -64,5 +83,10 @@ public class JohnEntity<T extends Entity> extends EntityModel<T> {
 		head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 		bone.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 		arms.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+	}
+
+	@Override
+	public ModelPart root() {
+		return this.root;
 	}
 }
