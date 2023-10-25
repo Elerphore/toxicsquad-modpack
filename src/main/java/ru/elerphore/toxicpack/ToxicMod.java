@@ -14,6 +14,8 @@ import ru.elerphore.toxicpack.entity.ModEntities;
 import ru.elerphore.toxicpack.entity.client.JohnRenderer;
 import ru.elerphore.toxicpack.events.OnItemChangeEventImplementation;
 import ru.elerphore.toxicpack.factory.mob.FactoryReceiver;
+import ru.elerphore.toxicpack.item.ModCreativeModTabs;
+import ru.elerphore.toxicpack.item.ModItems;
 
 @Mod(ToxicMod.MODID)
 public class ToxicMod {
@@ -27,6 +29,8 @@ public class ToxicMod {
 
     public ToxicMod() {
         ModEntities.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModCreativeModTabs.register(modEventBus);
     }
 
     @Mod.EventBusSubscriber(modid = ToxicMod.MODID)
