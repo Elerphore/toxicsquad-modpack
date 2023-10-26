@@ -20,7 +20,6 @@ public class ModItemModelProvider  extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
-        this.withExistingParent(ModItems.JOHN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.JOHN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 }
