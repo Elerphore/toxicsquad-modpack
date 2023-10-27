@@ -19,6 +19,8 @@ import ru.elerphore.toxicpack.events.OnKeyInputEventImplementation;
 import ru.elerphore.toxicpack.factory.mob.FactoryReceiver;
 import ru.elerphore.toxicpack.item.ModCreativeModTabs;
 import ru.elerphore.toxicpack.item.ModItems;
+import ru.elerphore.toxicpack.network.ToxicSquadPacketHandler;
+
 
 @Mod(ToxicMod.MODID)
 public class ToxicMod {
@@ -28,9 +30,10 @@ public class ToxicMod {
     public static final FactoryReceiver factoryReceiver = new FactoryReceiver();
 
     public static final String MODID = "toxicsquadpack";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public ToxicMod() {
+        ToxicSquadPacketHandler.register();
         ModEntities.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
