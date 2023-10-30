@@ -20,6 +20,7 @@ import ru.elerphore.toxicpack.factory.mob.FactoryReceiver;
 import ru.elerphore.toxicpack.item.ModCreativeModTabs;
 import ru.elerphore.toxicpack.item.ModItems;
 import ru.elerphore.toxicpack.network.ToxicSquadPacketHandler;
+import ru.elerphore.toxicpack.sound.ModSounds;
 
 
 @Mod(ToxicMod.MODID)
@@ -37,6 +38,7 @@ public class ToxicMod {
         ModEntities.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
+        ModSounds.register(modEventBus);
     }
 
     @Mod.EventBusSubscriber(modid = ToxicMod.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)

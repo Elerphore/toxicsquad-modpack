@@ -1,5 +1,6 @@
 package ru.elerphore.toxicpack.entity.custom;
 
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import ru.elerphore.toxicpack.sound.ModSounds;
 
 public class JohnModel extends Zombie {
 
@@ -75,6 +77,16 @@ public class JohnModel extends Zombie {
         } else {
             --this.idleAnimationTimeout;
         }
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return ModSounds.JOHN_AMBIENT.get();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSounds.JOHN_DEATH.get();
     }
 
     @Override

@@ -1,0 +1,18 @@
+{
+  "john_death_1": {
+    "subtitles": "",
+    "sounds": [
+      "toxicsquadpack:john_death_1",
+      "toxicsquadpack:john_death_2",
+      "toxicsquadpack:john_death_3"
+    ]
+  },
+  "john_ambient_1": {
+    "subtitles": "",
+    "sounds": [
+      "toxicsquadpack:john_ambient_1",
+      "toxicsquadpack:john_ambient_2",
+      "toxicsquadpack:john_ambient_3"
+    ]
+  }
+}

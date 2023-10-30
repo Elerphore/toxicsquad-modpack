@@ -32,6 +32,7 @@ public class OnItemChangeEventImplementation {
 
             player.sendSystemMessage(Component.literal("Тебе повезло. Клоун."));
         }
+
     }
 
 }
