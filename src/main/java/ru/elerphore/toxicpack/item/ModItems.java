@@ -24,6 +24,12 @@ public class ModItems {
                     )
             );
 
+    public static final RegistryObject<Item> SNUS =
+            ITEMS.register(
+                    "snus",
+                    () -> new Item(new Item.Properties().food(ModFoods.SNUS))
+            );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -20,6 +20,7 @@ public class ModCreativeModTabs {
                             .title(Component.literal("Toxic Squad Pack"))
                             .displayItems(((pParameters, pOutput) -> {
                                 pOutput.accept(ModItems.JOHN_SPAWN_EGG.get());
+                                pOutput.accept(ModItems.SNUS.get());
                             }))
                             .build());
 
