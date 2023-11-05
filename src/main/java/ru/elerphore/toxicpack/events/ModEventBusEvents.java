@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import ru.elerphore.toxicpack.entity.ModEntities;
 import ru.elerphore.toxicpack.entity.custom.JohnModel;
+import ru.elerphore.toxicpack.entity.custom.SnusGolemModel;
 
 import static ru.elerphore.toxicpack.ToxicMod.MODID;
 
@@ -15,6 +16,7 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.JOHN.get(), JohnModel.createAttributes().build());
+        event.put(ModEntities.SNUS_GOLEM.get(), SnusGolemModel.createAttributes().build());
     }
 
 }

@@ -1,10 +1,11 @@
-package ru.elerphore.toxicpack.entity.client;
+package ru.elerphore.toxicpack.entity.client.john;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import ru.elerphore.toxicpack.entity.client.ModModelLayers;
 import ru.elerphore.toxicpack.entity.custom.JohnModel;
 
 import static ru.elerphore.toxicpack.ToxicMod.MODID;

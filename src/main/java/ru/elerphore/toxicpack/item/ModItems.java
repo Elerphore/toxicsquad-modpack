@@ -24,6 +24,17 @@ public class ModItems {
                     )
             );
 
+    public static final RegistryObject<Item> SNUS_GOLEM_SPAWN_EGG =
+            ITEMS.register(
+                    "snus_golem_spawn_egg",
+                    () -> new ForgeSpawnEggItem(
+                            ModEntities.SNUS_GOLEM,
+                            0x7e9680,
+                            0xc5d1c5,
+                            new Item.Properties()
+                    )
+            );
+
     public static final RegistryObject<Item> SNUS =
             ITEMS.register(
                     "snus",

@@ -13,24 +13,21 @@ public class OnItemChangeEventImplementation {
         if (event.getEntity() instanceof Player player) {
             if (Math.random() < 0.01) {
                 factoryReceiver.getZombieFactory().mobSpawn(player, 7);
-                return;
             }
 
             if (Math.random() < 0.01) {
                 var explosion = factoryReceiver.getExplosionFactory().spawn(player);
                 explosion.explode();
                 explosion.finalizeExplosion(true);
-                return;
             }
 
             if(Math.random() < 0.01) {
                 var localPlayer = Minecraft.getInstance().player;
                 assert localPlayer != null;
                 localPlayer.setPos(localPlayer.position().x, localPlayer.position().y + 50, localPlayer.position().z);
-                return;
             }
 
-            player.sendSystemMessage(Component.literal("Тебе повезло. Клоун."));
+
         }
 
     }

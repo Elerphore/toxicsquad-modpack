@@ -21,6 +21,7 @@ public class ModCreativeModTabs {
                             .displayItems(((pParameters, pOutput) -> {
                                 pOutput.accept(ModItems.JOHN_SPAWN_EGG.get());
                                 pOutput.accept(ModItems.SNUS.get());
+                                pOutput.accept(ModItems.SNUS_GOLEM_SPAWN_EGG.get());
                             }))
                             .build());
 
